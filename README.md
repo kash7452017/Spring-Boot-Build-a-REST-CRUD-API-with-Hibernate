@@ -29,13 +29,13 @@
 >1. `基本類加載器（base classloader）`：包含一些不可變類或者幾乎不會被修改文件，例如Spring Boot JAR或第三方庫。
 >2. `重新啟動類加載器（restart classloader）`：包含應用程序的文件，這些文件在項目開發過程中將頻繁更改。
 >
->```
-><!-- ADD SUPPORT FOR AUTOMATIC RELOADING -->
+```
+<!-- ADD SUPPORT FOR AUTOMATIC RELOADING -->
 <dependency>
 	<groupId>org.springframework.boot</groupId>
 	<artifactId>spring-boot-devtools</artifactId>
 </dependency>
->```
+```
 >
 >>* `自動重啟`
 >>
@@ -55,15 +55,15 @@
 >Actuator 是 SpringBoot 提供的監控功能，可以用來查看當前的 SpringBoot 程式運行的內部狀況，譬如知道自動化配置的資訊、創建的 Spring beans 和獲取當前的 properties 屬性值
 >
 >如果要使用 SpringBoot Actuator 提供的監控功能，需要先加入相關的 maven dependency
->```
+```
 <dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-actuator</artifactId>
 </dependency>
->```
+```
 >因為安全的因素，所以 Actuator 默認只會開放`/actuator/health`和`/actuator/info`這兩個 endpoint，如果要開放其他 endpoint 的話，需要額外在 application.properties 中做設置
 >
->```
+```
 #例：
 	// 自訂Info訊息內容
 	info.app.name=My Super Cool App
@@ -72,7 +72,7 @@
 	// *在 YAML 中具有特殊含義，因此如果要包含（或排除）所有端點，請務必添加引號。
 	management.endpoints.web.exposure.include=*
 	management.endpoints.web.exposure.exclude=health,info
->```
+```
 >詳細可參考官方文檔：https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#actuator.endpoints
 
 ## Spring Boot REST API With Hibernate
